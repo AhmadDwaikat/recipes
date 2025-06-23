@@ -13,12 +13,12 @@ export default function MealDetails() {
     enabled: !!mealId,
   });
 
-  if (isLoading) return <p className="loading">Loading...</p>;
-  if (error) return <p className="error">Error loading meal.</p>;
+  if (isLoading) return <p className="meal-details-loading">Loading...</p>;
+  if (error) return <p className="meal-details-error">Error loading meal.</p>;
 
   return (
-    <div className="details-container">
-<Link to="/home" className="back-link">← Back to Home</Link>
+    <div className="meal-details-container">
+      <Link to="/home" className="meal-details-back-link">← Back to Home</Link>
       <MealCard data={data} />
     </div>
   );

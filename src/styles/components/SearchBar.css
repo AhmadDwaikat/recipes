@@ -1,6 +1,4 @@
-/* SearchBar.css */
-
-.search-bar {
+.searchbar-container {
   display: flex;
   flex-direction: column;
   max-width: 400px;
@@ -9,14 +7,14 @@
   color: var(--text);
 }
 
-.search-bar label {
+.searchbar-label {
   margin-bottom: 0.5rem;
   font-weight: 600;
   font-size: 1rem;
   user-select: none;
 }
 
-.search-bar input {
+.searchbar-input {
   padding: 0.5rem 1rem;
   font-size: 1rem;
   border: 1.5px solid var(--border);
@@ -26,12 +24,12 @@
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.search-bar input::placeholder {
+.searchbar-input::placeholder {
   color: var(--text);
   opacity: 0.6;
 }
 
-.search-bar input:focus {
+.searchbar-input:focus {
   outline: none;
   border-color: var(--accent);
   box-shadow: 0 0 5px var(--accent);

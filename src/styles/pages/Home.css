@@ -1,6 +1,4 @@
-/* Home.css */
-
-.header {
+.home-header {
   text-align: center;
   padding: 2rem 1rem;
   background: var(--card-bg);
@@ -11,13 +9,13 @@
   user-select: none;
 }
 
-.section {
+.home-section {
   padding: 2rem 1rem;
   max-width: 900px;
   margin: 0 auto;
 }
 
-.filters {
+.home-filters {
   background: var(--card-bg);
   padding: 1.5rem 2rem;
   max-width: 900px;
@@ -31,18 +29,18 @@
   color: var(--text);
 }
 
-.filters h2 {
+.home-filters h2 {
   flex-basis: 100%;
   margin-bottom: 0.5rem;
   color: var(--accent);
 }
 
-.filters label {
+.home-filters label {
   font-weight: 600;
   margin-right: 0.5rem;
 }
 
-.filters select {
+.home-filters select {
   padding: 0.4rem 0.8rem;
   border: 1.5px solid var(--border);
   border-radius: 6px;
@@ -52,13 +50,13 @@
   transition: border-color 0.3s ease;
 }
 
-.filters select:focus {
+.home-filters select:focus {
   outline: none;
   border-color: var(--accent);
   box-shadow: 0 0 5px var(--accent);
 }
 
-.filters-info {
+.home-filters-info {
   max-width: 900px;
   margin: 0.75rem auto 1.5rem;
   font-size: 1rem;
@@ -67,19 +65,19 @@
   text-align: center;
 }
 
-.results {
+.home-results {
   max-width: 900px;
   margin: 2rem auto;
   text-align: center;
   color: var(--text);
 }
 
-.results h2 {
+.home-results h2 {
   color: var(--accent);
   margin-bottom: 1rem;
 }
 
-.btn-surprise {
+.home-btn-surprise {
   cursor: pointer;
   background-color: var(--accent);
   color: #fff;
@@ -93,23 +91,25 @@
   margin: 1rem auto 2rem;
 }
 
-.btn-surprise:hover,
-.btn-surprise:focus {
+.home-btn-surprise:hover,
+.home-btn-surprise:focus {
   background-color: var(--accent-hover);
   outline: none;
 }
 
-.card-title {
+.home-card-title {
   color: var(--accent);
   font-weight: 700;
   text-align: center;
   margin-bottom: 0.5rem;
   user-select: none;
+  padding-bottom: 2rem;
+
 }
 
-.card-img {
+.home-card-img {
   display: block;
-  max-width: 600px;
+  max-width: 400px;
   width: 100%;
   height: auto;
   margin: 0 auto 1rem;
@@ -118,11 +118,11 @@
   transition: transform 0.3s ease;
 }
 
-.card-img:hover {
+.home-card-img:hover {
   transform: scale(1.05);
 }
 
-.text {
+.home-text {
   color: var(--text);
   font-size: 1rem;
   text-align: center;
@@ -130,16 +130,16 @@
   font-weight: 600;
 }
 
-a {
+.home-link {
   text-decoration: none;
 }
 
-a:hover,
-a:focus {
+.home-link:hover,
+.home-link:focus {
   outline: none;
 }
 
-.footer {
+.home-footer {
   background: var(--card-bg);
   border-top: 1px solid var(--border);
   padding: 1.5rem 1rem;

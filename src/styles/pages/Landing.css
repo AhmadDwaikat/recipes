@@ -1,6 +1,4 @@
-/* Landing.css */
-
-main {
+.landing-main {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: var(--bg);
   color: var(--text);
@@ -13,26 +11,26 @@ main {
 }
 
 /* Hero Section */
-.hero {
+.landing-hero {
   text-align: center;
   margin-bottom: 3rem;
 }
 
-.hero h1 {
+.landing-hero h1 {
   font-size: 3rem;
   margin-bottom: 0.5rem;
   color: var(--accent);
   user-select: none;
 }
 
-.hero .tagline {
+.landing-tagline {
   font-size: 1.25rem;
   margin-bottom: 2rem;
   font-weight: 500;
   color: var(--text);
 }
 
-.cta-btn {
+.landing-cta-btn {
   display: inline-block;
   background-color: var(--accent);
   color: #fff;
@@ -45,21 +43,21 @@ main {
   user-select: none;
 }
 
-.cta-btn:hover,
-.cta-btn:focus {
+.landing-cta-btn:hover,
+.landing-cta-btn:focus {
   background-color: var(--accent-hover);
   outline: none;
   text-decoration: none;
 }
 
 /* Features Section */
-.features {
+.landing-features {
   max-width: 600px;
   margin: 0 auto 3rem;
   padding: 0 1rem;
 }
 
-.features h2 {
+.landing-features h2 {
   color: var(--accent);
   font-size: 2rem;
   margin-bottom: 1rem;
@@ -67,7 +65,7 @@ main {
   text-align: center;
 }
 
-.features-list {
+.landing-features-list {
   list-style: none;
   padding-left: 0;
   font-size: 1.1rem;
@@ -75,12 +73,12 @@ main {
   color: var(--text);
 }
 
-.features-list li {
+.landing-features-list li {
   margin-bottom: 1rem;
 }
 
 /* About Section */
-.about {
+.landing-about {
   max-width: 600px;
   margin: 0 auto 3rem;
   padding: 0 1rem;
@@ -90,14 +88,14 @@ main {
   user-select: none;
 }
 
-.about h2 {
+.landing-about h2 {
   color: var(--accent);
   font-size: 2rem;
   margin-bottom: 1rem;
 }
 
 /* Footer */
-.footer {
+.landing-footer {
   text-align: center;
   padding: 1rem 0;
   background-color: var(--card-bg);

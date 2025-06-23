@@ -13,38 +13,38 @@ export default function MealCard({ data }) {
   }
 
   return (
-    <article className="card">
-      <h3 className="card-title">{data.strMeal}</h3>
+    <article className="mealcard-card">
+      <h3 className="mealcard-title">{data.strMeal}</h3>
       <img
-        className="card-img"
+        className="mealcard-img"
         src={data.strMealThumb}
         alt={data.strMeal}
         width={300}
       />
-      <p className="text">
+      <p className="mealcard-text">
         <strong>Category:</strong> {data.strCategory}
       </p>
-      <p className="text">
+      <p className="mealcard-text">
         <strong>Area:</strong> {data.strArea}
       </p>
 
-      <h4 className="section-title">Ingredients:</h4>
-      <ul className="ingredients-list">
+      <h4 className="mealcard-section-title">Ingredients:</h4>
+      <ul className="mealcard-ingredients-list">
         {ingredients.map((item, idx) => (
-          <li key={idx} className="ingredients-item">
+          <li key={idx} className="mealcard-ingredients-item">
             {item}
           </li>
         ))}
       </ul>
 
-      <h4 className="section-title">Instructions:</h4>
-      <p className="text text-instructions">{data.strInstructions}</p>
+      <h4 className="mealcard-section-title">Instructions:</h4>
+      <p className="mealcard-text mealcard-text-instructions">{data.strInstructions}</p>
 
       {data.strYoutube && (
         <p>
           <a
             href={data.strYoutube}
-            className="link"
+            className="mealcard-link"
             target="_blank"
             rel="noreferrer"
           >
@@ -57,7 +57,7 @@ export default function MealCard({ data }) {
         <p>
           <a
             href={data.strSource}
-            className="link"
+            className="mealcard-link"
             target="_blank"
             rel="noreferrer"
           >

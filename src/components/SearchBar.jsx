@@ -16,14 +16,17 @@ export default function SearchBar({ onSearchChange }) {
   }, [inputValue, onSearchChange]);
 
   return (
-    <div className="search-bar">
-      <label htmlFor="search">Search Recipes:</label>
+    <div className="searchbar-container">
+      <label htmlFor="search" className="searchbar-label">
+        Search Recipes:
+      </label>
       <input
         id="search"
         type="text"
         value={inputValue}
         onChange={handleChange}
         placeholder="e.g., chicken, pasta..."
+        className="searchbar-input"
       />
     </div>
   );

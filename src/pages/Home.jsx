@@ -1,19 +1,19 @@
-import { useState } from 'react';
-import { useQuery } from '@tanstack/react-query';
-import { Link } from 'react-router-dom';
+import { useState } from "react";
+import { useQuery } from "@tanstack/react-query";
+import { Link } from "react-router-dom";
 
-import { fetchRandomRecipe } from '../api/randomRecipeApi';
-import ThemeToggleButton from '../components/ThemeToggleButton';
-import SearchBar from '../components/SearchBar';
-import '../styles/pages/Home.css';
+import { fetchRandomRecipe } from "../api/randomRecipeApi";
+import ThemeToggleButton from "../components/ThemeToggleButton";
+import SearchBar from "../components/SearchBar";
+import "../styles/pages/Home.css";
 
 export default function Home() {
-  const [searchTerm, setSearchTerm] = useState('');
-  const [mealType, setMealType] = useState('');
-  const [diet, setDiet] = useState('');
+  const [searchTerm, setSearchTerm] = useState("");
+  const [mealType, setMealType] = useState("");
+  const [diet, setDiet] = useState("");
 
   const { data, refetch } = useQuery({
-    queryKey: ['meals'],
+    queryKey: ["meals"],
     queryFn: fetchRandomRecipe,
   });
 
@@ -21,20 +21,18 @@ export default function Home() {
     <>
       <ThemeToggleButton />
 
-      <header className="header">
+      <header className="home-header">
         <h1>Recipe Explorer</h1>
       </header>
 
-      {/* Search Section */}
-      <section className="section">
+      <section className="home-section">
         <SearchBar onSearchChange={setSearchTerm} />
-        <p className="filters-info">
-          <strong>Current Search:</strong> {searchTerm || 'None'}
+        <p className="home-filters-info">
+          <strong>Current Search:</strong> {searchTerm || "None"}
         </p>
       </section>
 
-      {/* Filters */}
-      <section className="filters">
+      <section className="home-filters">
         <h2>Filters</h2>
 
         <label htmlFor="meal-select">Meal Type:</label>
@@ -63,41 +61,39 @@ export default function Home() {
         </select>
       </section>
 
-      <p className="filters-info">
-        <strong>Meal Type:</strong> {mealType || 'Any'} | <strong>Diet:</strong>{' '}
-        {diet || 'Any'}
+      <p className="home-filters-info">
+        <strong>Meal Type:</strong> {mealType || "Any"} | <strong>Diet:</strong>{" "}
+        {diet || "Any"}
       </p>
 
-      {/* Placeholder for results */}
-      <section className="results">
+      <section className="home-results">
         <h2>Results</h2>
         <p>Recipe list coming soon...</p>
       </section>
 
-      {/* Feeling Lucky Section */}
-      <section className="section">
+      <section className="home-section">
         <h2>Feeling Lucky?</h2>
-        <button className="btn-surprise" onClick={refetch}>
+        <button className="home-btn-surprise" onClick={refetch}>
           🎲 Surprise Me!
         </button>
 
         {data && (
-          <Link to={`/home/${data.idMeal}`}>
-            <h3 className="card-title">{data.strMeal}</h3>
+          <Link to={`/home/${data.idMeal}`} className="home-link">
+            <h3 className="home-card-title">{data.strMeal}</h3>
             <img
-              className="card-img"
+              className="home-card-img"
               src={data.strMealThumb}
               alt={data.strMeal}
               width={300}
             />
-            <p className="text">
+            <p className="home-text">
               <strong>Category:</strong> {data.strCategory}
             </p>
           </Link>
         )}
       </section>
 
-      <footer className="footer">
+      <footer className="home-footer">
         <div>📞 About, contact, or copyright</div>
         <div>🌐 Social or GitHub link</div>
       </footer>
