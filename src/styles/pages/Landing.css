@@ -1,0 +1,108 @@
+/* Landing.css */
+
+main {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2rem 1rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  color: var(--accent);
+  user-select: none;
+}
+
+.hero .tagline {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.cta-btn {
+  display: inline-block;
+  background-color: var(--accent);
+  color: #fff;
+  font-weight: 700;
+  padding: 0.75rem 2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 1.25rem;
+  transition: background-color 0.3s ease;
+  user-select: none;
+}
+
+.cta-btn:hover,
+.cta-btn:focus {
+  background-color: var(--accent-hover);
+  outline: none;
+  text-decoration: none;
+}
+
+/* Features Section */
+.features {
+  max-width: 600px;
+  margin: 0 auto 3rem;
+  padding: 0 1rem;
+}
+
+.features h2 {
+  color: var(--accent);
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  user-select: none;
+  text-align: center;
+}
+
+.features-list {
+  list-style: none;
+  padding-left: 0;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--text);
+}
+
+.features-list li {
+  margin-bottom: 1rem;
+}
+
+/* About Section */
+.about {
+  max-width: 600px;
+  margin: 0 auto 3rem;
+  padding: 0 1rem;
+  text-align: center;
+  font-size: 1.1rem;
+  color: var(--text);
+  user-select: none;
+}
+
+.about h2 {
+  color: var(--accent);
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 1rem 0;
+  background-color: var(--card-bg);
+  border-top: 1px solid var(--border);
+  color: var(--text);
+  font-size: 0.9rem;
+  user-select: none;
+}

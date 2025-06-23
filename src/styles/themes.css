@@ -1,0 +1,25 @@
+/* themes.css */
+
+:root {
+  --bg: #fff;
+  --text: #222;
+  --accent: #ff7043;
+  --accent-hover: #e85d37;
+  --card-bg: #f8f8f8;
+  --border: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] {
+  --bg: #121212;
+  --text: #eee;
+  --accent: #ffb74d;
+  --accent-hover: #ffa94d;
+  --card-bg: #1e1e1e;
+  --border: rgba(255, 255, 255, 0.15);
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}

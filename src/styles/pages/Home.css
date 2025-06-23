@@ -1,0 +1,154 @@
+/* Home.css */
+
+.header {
+  text-align: center;
+  padding: 2rem 1rem;
+  background: var(--card-bg);
+  border-bottom: 1px solid var(--border);
+  color: var(--text);
+  font-size: 2.25rem;
+  font-weight: 700;
+  user-select: none;
+}
+
+.section {
+  padding: 2rem 1rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.filters {
+  background: var(--card-bg);
+  padding: 1.5rem 2rem;
+  max-width: 900px;
+  margin: 1rem auto;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 2rem;
+  align-items: center;
+  color: var(--text);
+}
+
+.filters h2 {
+  flex-basis: 100%;
+  margin-bottom: 0.5rem;
+  color: var(--accent);
+}
+
+.filters label {
+  font-weight: 600;
+  margin-right: 0.5rem;
+}
+
+.filters select {
+  padding: 0.4rem 0.8rem;
+  border: 1.5px solid var(--border);
+  border-radius: 6px;
+  background-color: var(--bg);
+  color: var(--text);
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.filters select:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 5px var(--accent);
+}
+
+.filters-info {
+  max-width: 900px;
+  margin: 0.75rem auto 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text);
+  text-align: center;
+}
+
+.results {
+  max-width: 900px;
+  margin: 2rem auto;
+  text-align: center;
+  color: var(--text);
+}
+
+.results h2 {
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+
+.btn-surprise {
+  cursor: pointer;
+  background-color: var(--accent);
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  transition: background-color 0.3s ease;
+  display: block;
+  margin: 1rem auto 2rem;
+}
+
+.btn-surprise:hover,
+.btn-surprise:focus {
+  background-color: var(--accent-hover);
+  outline: none;
+}
+
+.card-title {
+  color: var(--accent);
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  user-select: none;
+}
+
+.card-img {
+  display: block;
+  max-width: 600px;
+  width: 100%;
+  height: auto;
+  margin: 0 auto 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease;
+}
+
+.card-img:hover {
+  transform: scale(1.05);
+}
+
+.text {
+  color: var(--text);
+  font-size: 1rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  outline: none;
+}
+
+.footer {
+  background: var(--card-bg);
+  border-top: 1px solid var(--border);
+  padding: 1.5rem 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--text);
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  user-select: none;
+}
