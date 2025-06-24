@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import '../styles/pages/Landing.css';
-import ThemeToggleButton from '../components/ThemeToggleButton';
 
 export default function Landing() {
   return (

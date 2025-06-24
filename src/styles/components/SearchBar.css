@@ -22,6 +22,10 @@
   background-color: var(--card-bg);
   color: var(--text);
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+  padding-right: 2.5rem; /* space for clear button */
+  box-sizing: border-box;
+
 }
 
 .searchbar-input::placeholder {
@@ -33,4 +37,28 @@
   outline: none;
   border-color: var(--accent);
   box-shadow: 0 0 5px var(--accent);
+}
+.search-input-wrapper {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+.clear-button {
+  position: absolute;
+  right: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: transparent;
+  font-size: 1.25rem;
+  cursor: pointer;
+  color: #888;
+  padding: 0;
+  line-height: 1;
+}
+
+.clear-button:hover,
+.clear-button:focus {
+  color: #555;
+  outline: none;
 }

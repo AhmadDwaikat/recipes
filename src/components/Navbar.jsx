@@ -19,7 +19,7 @@ export default function Navbar() {
               to="/home"
               className={({ isActive }) => (isActive ? "active" : "")}
             >
-              Home
+              🏠 Home
             </NavLink>
           </li>
         )}
@@ -28,7 +28,7 @@ export default function Navbar() {
             to="/favorites"
             className={({ isActive }) => (isActive ? "active" : "")}
           >
-            Favorites
+            ⭐ Favorites
           </NavLink>
         </li>
         <li>
@@ -36,7 +36,7 @@ export default function Navbar() {
             to="/about"
             className={({ isActive }) => (isActive ? "active" : "")}
           >
-            About
+            ℹ️ About
           </NavLink>
         </li>
         <li>
@@ -44,13 +44,13 @@ export default function Navbar() {
             to="/contact"
             className={({ isActive }) => (isActive ? "active" : "")}
           >
-            Contact
+            📞 Contact
           </NavLink>
         </li>
         {isHomePage && (
           <li>
             <a href="#feeling-lucky" className="nav-anchor-link">
-              Surprise Me
+              🎲 Surprise Me
             </a>
           </li>
         )}

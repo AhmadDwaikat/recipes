@@ -16,14 +16,13 @@ export default function Favorites() {
 
   return (
     <section className="favorites-list">
-      {/* Title at the top */}
+    
       <div className="favorites-title">
         <h2>Your Favorite Meals</h2>
       </div>
 
-      {/* Cards displayed below the title */}
       <div className="favorites-grid">
-        {favorites.map((meal) => (
+        {[...favorites].reverse().map((meal) => (
           <div key={meal.idMeal} className="favorite-meal-wrapper">
             <button
               className="remove-favorite-btn"

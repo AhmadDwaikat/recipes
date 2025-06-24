@@ -1,27 +1,38 @@
-import { useParams, useNavigate, useLocation } from 'react-router-dom';
-import { useQuery } from '@tanstack/react-query';
-import { fetchMealById } from '../api/mealApi';
-import MealCard from '../components/MealCard';
-import '../styles/pages/MealDetails.css';
-
+import { useParams, useNavigate, useLocation } from "react-router-dom";
+import { useQuery } from "@tanstack/react-query";
+import { fetchMealById } from "../api/mealApi";
+import MealCard from "../components/MealCard";
+import "../styles/pages/MealDetails.css";
+import useLastViewed from "../hooks/useLastViewed";
+import { useEffect } from "react";
 export default function MealDetails() {
   const { mealId } = useParams();
   const navigate = useNavigate();
   const location = useLocation();
 
   const { data, isLoading, error, refetch } = useQuery({
-    queryKey: ['meal', mealId],
+    queryKey: ["meal", mealId],
     queryFn: () => fetchMealById(mealId),
     enabled: !!mealId,
   });
+  
+  const { addMeal } = useLastViewed();
+  useEffect(() => {
+    if (data) {
+      addMeal(data);
+      console.log("dataeeee:"+data.strMeal);
+    }
+  }, [data, addMeal]);
 
-  const from = location.state?.from || 'home';
+
+
+  const from = location.state?.from || "home";
 
   const handleBack = () => {
-    if (from === 'favorites') {
-      navigate('/favorites');
-    } else if (from === 'home') {
-      navigate('/home');
+    if (from === "favorites") {
+      navigate("/favorites");
+    } else if (from === "home") {
+      navigate("/home");
     } else {
       navigate(-1);
     }
@@ -39,8 +50,7 @@ export default function MealDetails() {
       </div>
     );
 
-  if (!data)
-    return <p className="meal-details-error">Meal data not found.</p>;
+  if (!data) return <p className="meal-details-error">Meal data not found.</p>;
 
   return (
     <div className="meal-details-container">
@@ -50,7 +60,7 @@ export default function MealDetails() {
         onClick={handleBack}
         aria-label={`Go back to ${from}`}
       >
-        {from === 'favorites' ? '← Back to Favorites' : '← Back to Home'}
+        {from === "favorites" ? "← Back to Favorites" : "← Back to Home"}
       </button>
 
       <MealCard data={data} />
