@@ -5,7 +5,6 @@ import ThemeToggleButton from '../components/ThemeToggleButton';
 export default function Landing() {
   return (
     <main className="landing-main">
-  <ThemeToggleButton />
 
   <section className="landing-hero">
     <h1>Recipe Roulette+</h1>

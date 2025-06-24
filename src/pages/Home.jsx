@@ -3,7 +3,6 @@ import { useQuery } from "@tanstack/react-query";
 import { Link } from "react-router-dom";
 
 import { fetchRandomRecipe } from "../api/randomRecipeApi";
-import ThemeToggleButton from "../components/ThemeToggleButton";
 import SearchBar from "../components/SearchBar";
 import "../styles/pages/Home.css";
 
@@ -19,10 +18,8 @@ export default function Home() {
 
   return (
     <>
-      <ThemeToggleButton />
-
       <header className="home-header">
-        <h1>Recipe Explorer</h1>
+        <h1>🍽️ Recipe Explorer</h1>
       </header>
 
       <section className="home-section">
@@ -70,32 +67,46 @@ export default function Home() {
         <h2>Results</h2>
         <p>Recipe list coming soon...</p>
       </section>
+      <div className="ppp" id="feeling-lucky">
+        <section className="home-section">
+          <h2>Feeling Lucky?</h2>
+          <button className="home-btn-surprise" onClick={refetch}>
+            🎲 Surprise Me!
+          </button>
 
-      <section className="home-section">
-        <h2>Feeling Lucky?</h2>
-        <button className="home-btn-surprise" onClick={refetch}>
-          🎲 Surprise Me!
-        </button>
-
-        {data && (
-          <Link to={`/home/${data.idMeal}`} className="home-link">
-            <h3 className="home-card-title">{data.strMeal}</h3>
-            <img
-              className="home-card-img"
-              src={data.strMealThumb}
-              alt={data.strMeal}
-              width={300}
-            />
-            <p className="home-text">
-              <strong>Category:</strong> {data.strCategory}
-            </p>
-          </Link>
-        )}
-      </section>
+          {data && (
+            <Link
+              to={`/home/mealdetails/${data.idMeal}`}
+              className="home-link"
+              state={{ from: "home" }}
+            >
+              <div className="random-meal">
+                <div className="home-meal-card">
+                  <h3 className="home-card-title">{data.strMeal}</h3>
+                  <div className="home-meal-meta">
+                    <p>
+                      <strong>Category:</strong> {data.strCategory}
+                    </p>
+                    <p>
+                      <strong>Area:</strong> {data.strArea}
+                    </p>
+                  </div>
+                  <img
+                    className="home-card-img"
+                    src={data.strMealThumb}
+                    alt={data.strMeal}
+                    width={300}
+                  />
+                </div>
+              </div>
+            </Link>
+          )}
+        </section>
+      </div>
 
       <footer className="home-footer">
-        <div>📞 About, contact, or copyright</div>
-        <div>🌐 Social or GitHub link</div>
+        <div>📞 About, Contact, or Copyright</div>
+        <div>🌐 Follow us on GitHub or Social Media</div>
       </footer>
     </>
   );

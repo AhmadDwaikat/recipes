@@ -10,12 +10,13 @@
 }
 
 [data-theme="dark"] {
-  --bg: #121212;
-  --text: #eee;
-  --accent: #ffb74d;
-  --accent-hover: #ffa94d;
-  --card-bg: #1e1e1e;
-  --border: rgba(255, 255, 255, 0.15);
+  --bg: #2a2a2a;           /* lighter dark background */
+  --text: #ddd;            /* lighter text */
+  --accent: #ffb74d;       /* keep accent similar */
+  --accent-hover: #ffa94d; /* keep accent hover similar */
+  --card-bg: #383838;      /* lighter card background */
+  --border: rgba(255, 255, 255, 0.25); /* more visible border */
+
 }
 
 body {

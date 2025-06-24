@@ -1,6 +1,9 @@
 import '../styles/components/MealCard.css';
+import { useFavorites } from '../hooks/useFavorites'; 
 
 export default function MealCard({ data }) {
+    const { addToFavorites, removeFromFavorites, isFavorite } = useFavorites();
+
   if (!data) return null;
 
   const ingredients = [];
@@ -11,6 +14,15 @@ export default function MealCard({ data }) {
       ingredients.push(`${measure} ${ingredient}`.trim());
     }
   }
+  const favorite = isFavorite(data.idMeal);
+
+  const toggleFavorite = () => {
+    if (favorite) {
+      removeFromFavorites(data.idMeal);
+    } else {
+      addToFavorites(data);
+    }
+  };
 
   return (
     <article className="mealcard-card">
@@ -21,6 +33,9 @@ export default function MealCard({ data }) {
         alt={data.strMeal}
         width={300}
       />
+       <button onClick={toggleFavorite} className='favorite-button'>
+        {favorite ? 'Remove from Favorites' : 'Add to Favorites'}
+      </button>
       <p className="mealcard-text">
         <strong>Category:</strong> {data.strCategory}
       </p>

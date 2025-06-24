@@ -1,0 +1,109 @@
+/* === Container === */
+.favorites-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+  background-color: var(--bg-color);
+}
+
+/* === Title Section === */
+.favorites-title {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+/* === Grid for Cards === */
+.favorites-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+/* === Meal Card Wrapper === */
+.favorite-meal-wrapper {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: transform 0.2s ease-in-out;
+  height: 100%;
+}
+
+.favorite-meal-wrapper:hover {
+  transform: scale(1.02);
+}
+
+/* === Link Styling === */
+.home-link {
+  text-decoration: none;
+  color: inherit;
+  height: 100%;
+}
+
+/* === Card Box === */
+.home-meal-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: var(--card-bg, #ffffff);
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  text-align: center;
+  transition: box-shadow 0.3s ease;
+}
+
+.home-meal-card:hover {
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+/* === Card Title === */
+.home-card-title {
+  min-height: 3rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--text-color);
+}
+
+/* === Meta Text === */
+.home-meal-meta p {
+  margin: 0.25rem 0;
+  font-size: 0.95rem;
+  color: var(--text-secondary-color);
+}
+
+/* === Meal Image === */
+.home-card-img {
+  flex-grow: 1;
+  object-fit: cover;
+  width: 100%;
+  height: 200px;
+  margin-top: 1rem;
+  border-radius: 0.5rem;
+}
+
+/* === Remove (X) Button === */
+.remove-favorite-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(255, 0, 0, 0.85);
+  border: none;
+  color: #fff;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  font-size: 18px;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease-in-out;
+}
+
+.remove-favorite-btn:hover {
+  background: rgba(200, 0, 0, 1);
+}
