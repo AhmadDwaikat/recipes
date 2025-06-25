@@ -1,4 +1,3 @@
-// components/FeelingLucky.js
 import { Link } from "react-router-dom";
 import "../styles/components/SurpriseRecipe.css"
 export default function FeelingLucky({ data, refetch }) {

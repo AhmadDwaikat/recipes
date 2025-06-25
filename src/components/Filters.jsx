@@ -1,34 +1,68 @@
-// components/Filters.jsx
-import "../styles/components/Filters.css"
+import { useEffect, useState } from "react";
+import "../styles/components/Filters.css";
 
-export default function Filters({ mealType, diet, setMealType, setDiet }) {
+export default function Filters({ category, area, setCategory, setArea }) {
+  const [categories, setCategories] = useState([]);
+  const [areas, setAreas] = useState([]);
+
+   useEffect(() => {
+    async function fetchCategories() {
+      try {
+        const res = await fetch(
+          "https://www.themealdb.com/api/json/v1/1/list.php?c=list"
+        );
+        const data = await res.json();
+        setCategories(data.meals || []);
+      } catch (err) {
+        console.error("Failed to fetch categories:", err);
+      }
+    }
+    async function fetchAreas() {
+      try {
+        const res = await fetch(
+          "https://www.themealdb.com/api/json/v1/1/list.php?a=list"
+        );
+        const data = await res.json();
+        setAreas(data.meals || []);
+      } catch (err) {
+        console.error("Failed to fetch areas:", err);
+      }
+    }
+
+    fetchCategories();
+    fetchAreas();
+  }, []);
+
   return (
     <section className="home-filters">
       <h2>Filters</h2>
 
-      <label htmlFor="meal-select">Meal Type:</label>
+      <label htmlFor="meal-select">Category:</label>
       <select
         id="meal-select"
-        value={mealType}
-        onChange={(e) => setMealType(e.target.value)}
+        value={category}
+        onChange={(e) => setCategory(e.target.value)}
       >
         <option value="">All</option>
-        <option value="breakfast">Breakfast</option>
-        <option value="lunch">Lunch</option>
-        <option value="dinner">Dinner</option>
-        <option value="snack">Snack</option>
+        {categories.map((cat) => (
+          <option key={cat.strCategory} value={cat.strCategory}>
+            {cat.strCategory}
+          </option>
+        ))}
       </select>
 
-      <label htmlFor="diet-select">Diet:</label>
+      <label htmlFor="area-select">Area:</label>
       <select
-        id="diet-select"
-        value={diet}
-        onChange={(e) => setDiet(e.target.value)}
+        id="area-select"
+        value={area}
+        onChange={(e) => setArea(e.target.value)}
       >
         <option value="">All</option>
-        <option value="vegan">Vegan</option>
-        <option value="vegetarian">Vegetarian</option>
-        <option value="gluten-free">Gluten-Free</option>
+        {areas.map((area) => (
+          <option key={area.strArea} value={area.strArea}>
+            {area.strArea}
+          </option>
+        ))}
       </select>
     </section>
   );

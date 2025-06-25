@@ -1,4 +1,3 @@
-// components/RecentlyViewed.jsx
 import { Link } from "react-router-dom";
 import "../styles/components/RecentlyViewed.css"
 

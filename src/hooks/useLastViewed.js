@@ -9,7 +9,6 @@ export default function useLastViewed() {
     return saved ? JSON.parse(saved) : [];
   });
 
-  // Sync to localStorage whenever updated
   useEffect(() => {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(lastViewed));
   }, [lastViewed]);
@@ -22,7 +21,7 @@ export default function useLastViewed() {
       if (exists) return prev;
 
       const updated = [...prev, meal];
-      return updated.slice(-MAX_HISTORY); // keep last 6
+      return updated.slice(-MAX_HISTORY);
     });
   };
 

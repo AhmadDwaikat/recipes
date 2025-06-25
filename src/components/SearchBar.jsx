@@ -13,7 +13,7 @@ export default function SearchBar({ onSearchChange }) {
 
   function clearInput() {
     setInputValue("");
-    onSearchChange(""); // Immediately clear search results
+    onSearchChange("");
   }
 
   useEffect(() => {
