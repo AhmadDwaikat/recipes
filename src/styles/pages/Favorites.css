@@ -4,13 +4,14 @@
   flex-direction: column;
   gap: 2rem;
   padding: 2rem;
-  background-color: var(--bg-color);
+  background-color: var(--bg);
 }
 
 /* === Title Section === */
 .favorites-title {
   text-align: center;
   margin-bottom: 1rem;
+  color: var(--accent);
 }
 
 /* === Grid for Cards === */
@@ -33,14 +34,12 @@
   transform: scale(1.02);
 }
 
-/* === Link Styling === */
 .home-link {
   text-decoration: none;
   color: inherit;
   height: 100%;
 }
 
-/* === Card Box === */
 .home-meal-card {
   height: 100%;
   display: flex;
@@ -64,8 +63,7 @@
   font-size: 1.25rem;
   font-weight: 600;
   margin-bottom: 0.5rem;
-  color: var(--text-color);
-}
+color: var(--text);}
 
 /* === Meta Text === */
 .home-meal-meta p {

@@ -12,27 +12,19 @@
 
 .home-section {
   padding: 2rem 1rem;
-  max-width: 900px;
-  margin: 2rem auto;
   background-color: var(--card-bg);
-  border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 
 .home-results {
-  max-width: 900px;
-  margin: 2rem auto;
   text-align: center;
   color: var(--text);
   background-color: var(--card-bg);
 }
 
-.home-results h2 {
-  color: var(--accent);
-  margin-bottom: 1rem;
-  
-}
+
+
 
 .home-filters-info {
   max-width: 900px;

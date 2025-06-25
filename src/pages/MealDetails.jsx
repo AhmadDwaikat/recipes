@@ -20,7 +20,6 @@ export default function MealDetails() {
   useEffect(() => {
     if (data) {
       addMeal(data);
-      console.log("dataeeee:"+data.strMeal);
     }
   }, [data, addMeal]);
 

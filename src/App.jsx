@@ -7,6 +7,7 @@ import Favorites from "./pages/Favorites";
 import "./styles/themes.css";
 import "./App.css";
 import ScrollToTop from "./components/ScrollToTop";
+import RandomMeals from "./pages/RandomMeals";
 
 function App() {
   return (
@@ -17,6 +18,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Landing />} />
           <Route path="/home" element={<Home />} />
+          <Route path="/home/randommeals" element={<RandomMeals />} />
+
           <Route path="/home/mealdetails/:mealId" element={<MealDetails />} />
           <Route path="/favorites" element={<Favorites />} />
           <Route

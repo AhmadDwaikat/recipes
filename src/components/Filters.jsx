@@ -1,11 +1,19 @@
 import { useEffect, useState } from "react";
 import "../styles/components/Filters.css";
 
-export default function Filters({ category, area, setCategory, setArea }) {
+export default function Filters({
+  category,
+  area,
+  ingredient,
+  setCategory,
+  setArea,
+  setIngredient,
+}) {
   const [categories, setCategories] = useState([]);
   const [areas, setAreas] = useState([]);
+  const [ingredients, setIngredients] = useState([]);
 
-   useEffect(() => {
+  useEffect(() => {
     async function fetchCategories() {
       try {
         const res = await fetch(
@@ -29,8 +37,21 @@ export default function Filters({ category, area, setCategory, setArea }) {
       }
     }
 
+    async function fetchIngredients() {
+      try {
+        const res = await fetch(
+          "https://www.themealdb.com/api/json/v1/1/list.php?i=list"
+        );
+        const data = await res.json();
+        setIngredients(data.meals || []);
+      } catch (err) {
+        console.error("Failed to fetch ingredients:", err);
+      }
+    }
+
     fetchCategories();
     fetchAreas();
+    fetchIngredients();
   }, []);
 
   return (
@@ -61,6 +82,20 @@ export default function Filters({ category, area, setCategory, setArea }) {
         {areas.map((area) => (
           <option key={area.strArea} value={area.strArea}>
             {area.strArea}
+          </option>
+        ))}
+      </select>
+
+      <label htmlFor="ingredient-select">Ingredient:</label>
+      <select
+        id="ingredient-select"
+        value={ingredient}
+        onChange={(e) => setIngredient(e.target.value)}
+      >
+        <option value="">All</option>
+        {ingredients.map((ing) => (
+          <option key={ing.strIngredient} value={ing.strIngredient}>
+            {ing.strIngredient}
           </option>
         ))}
       </select>

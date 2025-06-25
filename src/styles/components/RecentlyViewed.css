@@ -1,11 +1,8 @@
 /* styles/RecentlyViewed.css */
 
 .rv-section {
-  max-width: 900px;
-  margin: 2rem auto;
   padding: 2rem 1rem;
   background-color: var(--card-bg);
-  border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   color: var(--text);
 }

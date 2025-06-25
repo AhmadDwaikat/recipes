@@ -49,9 +49,9 @@ export default function Navbar() {
         </li>
         {isHomePage && (
           <li>
-            <a href="#feeling-lucky" className="nav-anchor-link">
+            <NavLink to="/home/randommeals" className="nav-anchor-link">
               🎲 Surprise Me
-            </a>
+            </NavLink>
           </li>
         )}
         <li className="navbar-theme-toggle">

@@ -1,39 +1,39 @@
 import { useEffect, useState } from "react";
-import { useQuery } from "@tanstack/react-query";
-import { fetchRandomRecipe } from "../api/randomRecipeApi";
 import SearchBar from "../components/SearchBar";
 import Filters from "../components/Filters";
 import RecentlyViewed from "../components/RecentlyViewed";
-import FeelingLucky from "../components/FeelingLucky";
 import useLastViewed from "../hooks/useLastViewed";
-import "../styles/pages/Home.css";
 import SearchByName from "../components/SearchByName";
 import MealsByFilters from "../components/MealsByFilters";
+import "../styles/pages/Home.css";
 
 export default function Home() {
   const [searchTerm, setSearchTerm] = useState("");
- const [category, setCategory] = useState(localStorage.getItem("category") || "");
-const [area, setArea] = useState(localStorage.getItem("area") || "");
-
+  const [category, setCategory] = useState(
+    localStorage.getItem("category") || ""
+  );
+  const [area, setArea] = useState(localStorage.getItem("area") || "");
+  const [ingredient, setIngredient] = useState(
+    localStorage.getItem("ingredient") || ""
+  );
 
   const { lastViewed, removeMeal } = useLastViewed();
-
-  const { data, refetch } = useQuery({
-    queryKey: ["meals"],
-    queryFn: fetchRandomRecipe,
-  });
 
   useEffect(() => {
     localStorage.setItem("searchTerm", searchTerm);
   }, [searchTerm]);
 
   useEffect(() => {
-  localStorage.setItem("category", category);
-}, [category]);
+    localStorage.setItem("category", category);
+  }, [category]);
 
-useEffect(() => {
-  localStorage.setItem("area", area);
-}, [area]);
+  useEffect(() => {
+    localStorage.setItem("area", area);
+  }, [area]);
+
+  useEffect(() => {
+    localStorage.setItem("ingredient", ingredient);
+  }, [ingredient]);
 
   return (
     <>
@@ -43,31 +43,29 @@ useEffect(() => {
 
       <section className="home-section">
         <SearchBar onSearchChange={setSearchTerm} />
-        <p className="home-filters-info">
-          <strong>Current Search:</strong> {searchTerm || "None"}
-        </p>
+
+        <Filters
+          category={category}
+          area={area}
+          ingredient={ingredient}
+          setCategory={setCategory}
+          setArea={setArea}
+          setIngredient={setIngredient}
+        />
       </section>
-
-      <Filters
-        category={category}
-        area={area}
-        setCategory={setCategory}
-        setArea={setArea}
-      />
-
-      <p className="home-filters-info">
-        <strong>Meal Type:</strong> {category || "Any"} | <strong>Area:</strong>{" "}
-        {area || "Any"}
-      </p>
-
-      <section className="home-results">
-        <h2>Results</h2>
-        <MealsByFilters selectedCategory={category} selectedArea={area} />
-        <SearchByName mealName={searchTerm} />
-      </section>
+      
+      {(category || area || ingredient || searchTerm) && (
+        <section className="home-results">
+          <MealsByFilters
+            selectedCategory={category}
+            selectedArea={area}
+            selectedIngredient={ingredient}
+          />
+          <SearchByName mealName={searchTerm} />
+        </section>
+      )}
 
       <RecentlyViewed lastViewed={lastViewed} removeMeal={removeMeal} />
-      <FeelingLucky data={data} refetch={refetch} />
 
       <footer className="home-footer">
         <div>📞 About, Contact, or Copyright</div>

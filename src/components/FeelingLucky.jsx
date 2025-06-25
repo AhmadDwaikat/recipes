@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import "../styles/components/SurpriseRecipe.css"
 export default function FeelingLucky({ data, refetch }) {
   return (
-    <div className="ppp" id="feeling-lucky">
       <section className="home-section">
         <h2 className="home-section-title">Feeling Lucky?</h2>
         <button className="home-btn-surprise" onClick={refetch}>
@@ -14,7 +13,6 @@ export default function FeelingLucky({ data, refetch }) {
             className="home-link"
             state={{ from: "home" }}
           >
-            <div className="random-meal">
               <div className="home-meal-card">
                 <h3 className="home-card-title">{data.strMeal}</h3>
                 <div className="home-meal-meta">
@@ -28,10 +26,9 @@ export default function FeelingLucky({ data, refetch }) {
                   width={300}
                 />
               </div>
-            </div>
+            
           </Link>
         )}
       </section>
-    </div>
   );
 }

@@ -3,7 +3,6 @@
 .home-filters {
   background: var(--card-bg);
   padding: 1.5rem 2rem;
-  max-width: 900px;
   margin: 1rem auto;
   border-radius: 10px;
   border: 1px solid var(--border);
