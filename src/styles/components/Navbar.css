@@ -67,3 +67,43 @@
   color: var(--accent);
   outline: none;
 }
+
+
+/* General nav link styles */
+.nav-link {
+  color: var(--text);
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+}
+
+/* Hover, focus, and active states */
+.nav-link:hover,
+.nav-link:focus,
+.nav-link.active {
+  color: var(--accent);
+  outline: none;
+}
+
+/* Special styles for Create Meal link */
+.create-meal {
+  font-weight: 700;
+  background-color: var(--accent);
+  color: white;
+  padding: 0.3rem 0.75rem;
+  border-radius: 6px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.create-meal:hover,
+.create-meal:focus,
+.create-meal.active {
+  background-color: var(--accent-hover);
+  color: white;
+  outline: none;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+}

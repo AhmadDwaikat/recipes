@@ -7,6 +7,12 @@
   --accent-hover: #e85d37;
   --card-bg: #f8f8f8;
   --border: rgba(0, 0, 0, 0.1);
+
+   /* Optional additions */
+  --input-bg: #fff;
+  --input-text: #222;
+  --button-bg: var(--accent);
+  --button-text: #fff;
 }
 
 [data-theme="dark"] {
@@ -16,6 +22,12 @@
   --accent-hover: #ffa94d; /* keep accent hover similar */
   --card-bg: #383838;      /* lighter card background */
   --border: rgba(255, 255, 255, 0.25); /* more visible border */
+
+ /* Optional additions */
+  --input-bg: #444;
+  --input-text: #fff;
+  --button-bg: var(--accent);
+  --button-text: #222;
 
 }
 
