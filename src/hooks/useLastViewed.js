@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 const STORAGE_KEY = "lastViewed";
-const MAX_HISTORY = 6;
+const MAX_HISTORY = 5;
 
 export default function useLastViewed() {
   const [lastViewed, setLastViewed] = useState(() => {
